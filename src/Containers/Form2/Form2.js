@@ -10,13 +10,34 @@ const Form2 = () => {
 
   return (
     <form className={classes.container}>
-      <Input placeholder="KINGDOM" />
+      <DropdownWithSearch
+        title="KINGDOM"
+        options={[
+          "ABEOKUTA",
+          "ABUJA",
+          "AKURE",
+          "BENIN",
+          "BENUE",
+          "CALABAR",
+          "ENUGU",
+          "IBADAN",
+          "IFE",
+          "ILORIN",
+          "JOS",
+          "LAGOS",
+          "PORT HARCOURT",
+          "THE COOKS",
+        ]}
+      />
       <Input placeholder="NAME (BIRTHDAY) DAY" type="date" />
       <DropdownWithSearch
         title="RANK"
         options={["LCP", "LCVP", "TEAM LEADER", "EST"]}
       />
-      <Input placeholder="DROP AN EMERGENCY CONTACT" />
+      <DropdownWithSearch
+        title="IS THIS YOUR FIRST SUMMIT"
+        options={["YES", "NO"]}
+      />
 
       <Button
         onClick={() => {

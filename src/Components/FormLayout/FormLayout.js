@@ -50,7 +50,6 @@ const FormLayout = ({ children }) => {
           <h4>Get Registered</h4>
           <div className={classes.indicatorContainer}>
             {steps.map((data) => {
-              console.log(data === Number(formStep));
               return (
                 <div
                   key={data}
