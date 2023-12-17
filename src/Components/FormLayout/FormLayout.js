@@ -1,6 +1,6 @@
 import classes from "./FormLayout.module.css";
 import ncJosLogo from "../../Assets/Images/ncJosLogo.png";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const FormLayout = ({ children }) => {
   // Utils
@@ -8,6 +8,7 @@ const FormLayout = ({ children }) => {
 
   // Router
   const { formStep } = useParams();
+  const navigate = useNavigate();
 
   return (
     <section className={classes.container}>
@@ -24,6 +25,9 @@ const FormLayout = ({ children }) => {
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
+                onClick={() => {
+                  navigate(-1);
+                }}
               >
                 <g style={{ mixBlendMode: "lighten" }}>
                   <path
@@ -34,7 +38,13 @@ const FormLayout = ({ children }) => {
                   />
                 </g>
               </svg>
-              <span>Back</span>
+              <span
+                onClick={() => {
+                  navigate(-1);
+                }}
+              >
+                Back
+              </span>
             </div>
           )}
           <h4>Get Registered</h4>
