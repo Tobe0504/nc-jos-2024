@@ -1,0 +1,73 @@
+.container {
+  min-height: 100vh;
+  background: url("../../Assets/Images/landingBg.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.innerContainer {
+  border: 1px solid #f3f2ed;
+  padding: 150px 55px;
+  width: 50%;
+}
+
+.innerContainer > h4 {
+  color: #c6aa58;
+  text-align: center;
+  font-family: Cinzel;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .innerContainer {
+    border: 1px solid #f3f2ed;
+    padding: 3rem 0.5rem;
+    width: 100%;
+  }
+
+  .innerContainer > h4 {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .innerContainer > button {
+    width: 305px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .innerContainer {
+    border: 1px solid #f3f2ed;
+    padding: 3rem 0.5rem;
+    width: 100%;
+  }
+
+  .innerContainer > h4 {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .innerContainer > button {
+    width: 305px;
+    margin: auto;
+  }
+}

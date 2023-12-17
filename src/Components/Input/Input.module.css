@@ -7,7 +7,7 @@
   }
 }
 .container {
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .container > label {
@@ -111,10 +111,10 @@
   }
 }
 
-@media screen and (max-width: 767px) and (max-width: 1023px) {
-  .container > input {
+@media screen and (max-width: 767px) {
+  .container > input,
+  .container > input::placeholder {
     padding: 12px;
-    font-family: Cinzel;
     font-size: 14px;
     line-height: 23px;
     border-radius: 5px;
