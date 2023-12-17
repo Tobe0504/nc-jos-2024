@@ -1,0 +1,56 @@
+.container {
+  min-height: 100vh;
+  background: url("../../Assets/Images/landingBg.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container > h4 {
+  color: #c0c0c0;
+  text-align: center;
+  font-family: Trajan Pro;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.container > button {
+  width: 600px;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .container > h4 {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .container > button {
+    width: 305px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .container > h4 {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .container > button {
+    width: 305px;
+  }
+}
