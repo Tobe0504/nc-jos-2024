@@ -14,6 +14,7 @@ const Input = ({
   tip,
   style,
   name,
+  onFocus,
 }) => {
   // States
   const [invalid, setInvalid] = useState(false);

@@ -8,10 +8,10 @@ const LandingPage = () => {
   return (
     <section className={classes.container}>
       <h4>
-        WELCOME TO <br />
-        NATIONAL CONGRESS <br />
-        JOS 24
+        <span>WELCOME</span> TO NATIONAL <br /> CONGRESS JOS<span>'24</span>
       </h4>
+      <p>THE BEGINNING OF THE END</p>
+
       <Button
         onClick={() => {
           navigate("/registration/1");

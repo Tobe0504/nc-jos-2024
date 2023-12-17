@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 62px;
 }
 
 .container > h4 {
@@ -21,6 +21,20 @@
   line-height: normal;
 }
 
+.container > P {
+  color: #c6aa58;
+  text-align: center;
+  font-family: Cinzel;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.container > h4 > span {
+  color: #c6aa58;
+}
+
 .container > button {
   width: 600px;
 }
@@ -28,11 +42,17 @@
 @media screen and (min-width: 767px) and (max-width: 1023px) {
   .container {
     padding: 1rem;
+    gap: 49px;
   }
 
   .container > h4 {
     font-size: 32px;
     line-height: normal;
+  }
+
+  .container > p {
+    font-family: Cinzel;
+    font-size: 20px;
   }
 
   .container > button {
@@ -43,6 +63,12 @@
 @media screen and (max-width: 767px) {
   .container {
     padding: 1rem;
+    gap: 49px;
+  }
+
+  .container > p {
+    font-family: Cinzel;
+    font-size: 20px;
   }
 
   .container > h4 {

@@ -43,7 +43,7 @@ const Form1 = () => {
         name="name"
       />
       <Input
-        placeholder="RAVEN COORDINATES"
+        placeholder="RAVEN (PHONE) COORDINATES"
         value={formData.ravenCoordinates}
         name="ravenCoordinates"
         onChange={inputChangeHandler}

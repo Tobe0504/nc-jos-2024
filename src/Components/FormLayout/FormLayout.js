@@ -1,6 +1,8 @@
 import classes from "./FormLayout.module.css";
 import ncJosLogo from "../../Assets/Images/ncJosLogo.png";
 import { useNavigate, useParams } from "react-router-dom";
+import formBg from "../../Assets/Images/formSection.png";
+import ncSilver from "../../Assets/Images/nationalCongressSilver.png";
 
 const FormLayout = ({ children }) => {
   // Utils
@@ -16,6 +18,9 @@ const FormLayout = ({ children }) => {
         <img src={ncJosLogo} alt="NC Jos Logo" />
       </div>
       <div className={classes.rightSection}>
+        <img src={formBg} alt="Form Background" />
+        <img src={ncSilver} alt="NC Logo" />
+
         <div className={classes.innerContainer}>
           {formStep !== "1" && (
             <div className={classes.previousNav}>
