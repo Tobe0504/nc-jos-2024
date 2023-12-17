@@ -13,6 +13,7 @@ const Input = ({
   placeholder,
   tip,
   style,
+  name,
 }) => {
   // States
   const [invalid, setInvalid] = useState(false);
@@ -28,6 +29,7 @@ const Input = ({
       )}
       <input
         type={type ? type : "text"}
+        name={name}
         placeholder={placeholder}
         id={label}
         onChange={onChange}

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AppContext = createContext();
 
@@ -6,7 +6,7 @@ const AppContextProvider = ({ children }) => {
   // States
   const [formData, setFormData] = useState({
     name: "",
-    raven_coordinates: "",
+    ravenCoordinates: "",
     gender: "",
     address: "",
     lc: "",
@@ -20,6 +20,10 @@ const AppContextProvider = ({ children }) => {
     emergencyContactRelationship: "",
     suggestions: "",
   });
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
   return (
     <AppContext.Provider value={{ formData, setFormData }}>
       {children}
