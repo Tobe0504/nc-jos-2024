@@ -9,6 +9,7 @@
 
 .container {
   margin-bottom: 24px;
+  border-bottom: 1px solid #f3f2ed;
 }
 
 .dropdown {
@@ -47,14 +48,16 @@
   align-items: center;
   justify-content: space-between;
   color: var(--grey3);
-  font-family: Archivo;
-  font-size: 16px;
+  color: #f3f2ed;
+  font-family: Cinzel;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 25px;
+  font-weight: 700;
+  line-height: normal;
   cursor: pointer;
   animation: appear 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  opacity: 0.5;
 }
 
 .dropdown svg {
@@ -71,7 +74,6 @@
   left: 0;
   box-sizing: border-box;
   z-index: 1;
-  background: #ffffff;
   min-height: 100%;
   max-height: 250px;
   overflow-y: auto;
@@ -80,14 +82,13 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   outline: none;
-  border: none;
   animation: appear 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 
-  border: 1px solid var(--foundation-grey-g-40, #e0e0e0);
-  background: #fff;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.06),
-    0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: 1px solid #9568ff;
+  background: #111613;
+  padding: 1rem;
 }
 
 .dropdown .dropdownContent::-webkit-scrollbar {
@@ -95,20 +96,23 @@
 }
 
 .dropdown .dropdownContent .dropdownItem {
-  padding: 10px 22px;
+  padding: 16px;
   cursor: pointer;
   transition: all 0.2s;
   position: relative;
-  font-family: Archivo;
-  font-size: 18px;
+  color: #c0c0c0;
+  font-family: Cinzel;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 27px;
+  font-weight: 700;
+  line-height: normal;
   width: 100%;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.4);
+  text-align: center;
 }
 
 .dropdown .dropdownContent .dropdownItem:hover {
-  background: var(--foundation-grey-g-20, #efefef);
+  background: rgba(198, 170, 88, 0.06);
 }
 
 .dropdownItem2 {
@@ -186,7 +190,6 @@
 }
 @media screen and (min-width: 767px) and (max-width: 1023px) {
   .dropdown {
-    border-radius: 5px;
     width: 100%;
     height: 50px;
     padding: 0 22px;

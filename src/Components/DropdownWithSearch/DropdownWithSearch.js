@@ -9,8 +9,8 @@ const DropdownWithSearch = (props) => {
   const [invalid, setInvalid] = useState(false);
 
   // ref
-  const dropdownRef = useRef < HTMLDivElement > null;
-  const dropdownItem = useRef < HTMLDivElement > null;
+  const dropdownRef = useRef(null);
+  const dropdownItem = useRef(null);
 
   useEffect(() => {
     setOptionsState(props.options);
