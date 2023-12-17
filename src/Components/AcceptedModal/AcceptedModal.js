@@ -2,11 +2,11 @@ import React from "react";
 import classes from "./AcceptedModal.module.css";
 import ReactDom from "react-dom";
 
-const BackDrop = (props: any) => {
+const BackDrop = (props) => {
   return <div className={classes.backdrop} onClick={props.onClick} />;
 };
 
-const ModalOverlay = (props: any) => {
+const ModalOverlay = (props) => {
   return (
     <div className={classes.modal} style={props.style}>
       <div>{props.body}</div>
@@ -17,7 +17,7 @@ const ModalOverlay = (props: any) => {
 const backdropContainer = document.getElementById("backdrop");
 const modalOverlay = document.getElementById("modal-overlay");
 
-const AcceptedModal = (props: any) => {
+const AcceptedModal = (props) => {
   return (
     <div className={classes.container}>
       {ReactDom.createPortal(
