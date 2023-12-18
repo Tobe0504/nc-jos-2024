@@ -54,6 +54,7 @@
   position: relative;
   padding: 42px;
   z-index: 3;
+  border: 2px solid rgba(255, 255, 255, 0.09);
 }
 
 .previousNav {
@@ -119,7 +120,7 @@
   }
 
   .innerContainer {
-    padding: 0px;
+    padding: 22px;
   }
 
   .previousNav {
@@ -156,11 +157,16 @@
 
   .rightSection {
     min-height: 100vh;
-    padding: 42px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .innerContainer {
-    padding: 0px;
+    padding: 22px;
+    width: 100%;
   }
 
   .previousNav {
