@@ -1,16 +1,19 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
 import classes from "../Forms/Forms.module.css";
 import { AppContext } from "../../Context/AppContext";
+import AcceptedModal from "../../Components/AcceptedModal/AcceptedModal";
+import SuccessModalBody from "./SuccessModalBody";
 
 const Form4 = () => {
   // Router
-  const navigate = useNavigate();
 
   // COntext
   const { formData, setFormData } = useContext(AppContext);
+
+  // States
+  const [displayModal, setDisplayModal] = useState(false);
 
   // Utils
   const inputChangeHandler = (e) => {
@@ -21,6 +24,14 @@ const Form4 = () => {
 
   return (
     <form className={classes.container}>
+      {displayModal && (
+        <AcceptedModal
+          onClick={() => {
+            setDisplayModal(false);
+          }}
+          body={<SuccessModalBody />}
+        />
+      )}
       <Input
         placeholder="RELATIONSHIP WITH EMERGENCY CONTACT"
         value={formData.emergencyContactRelationship}
@@ -35,8 +46,10 @@ const Form4 = () => {
       />
 
       <Button
-        onClick={() => {
-          navigate("/registration-success");
+        onClick={(e) => {
+          e.preventDefault();
+
+          setDisplayModal(true);
         }}
       >
         REGISTER
