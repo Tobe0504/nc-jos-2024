@@ -49,6 +49,16 @@
 
 .container > input:focus {
   outline: none;
+  background: transparent;
+}
+
+.container > input:-webkit-autofill {
+  background: transparent;
+}
+
+.container > input[type="text"]:-webkit-autofill::after,
+.container > input[type="password"]:-webkit-autofill {
+  background: transparent;
 }
 
 .valid {

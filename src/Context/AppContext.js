@@ -70,7 +70,6 @@ const AppContextProvider = ({ children }) => {
         suggestions,
       })
       .then((res) => {
-        console.log(res);
         setFormSubmitRequest({
           isLoading: false,
           data: res.data[0],
@@ -78,7 +77,6 @@ const AppContextProvider = ({ children }) => {
         });
       })
       .catch((err) => {
-        console.log(err);
         setFormSubmitRequest({
           isLoading: false,
           data: null,
