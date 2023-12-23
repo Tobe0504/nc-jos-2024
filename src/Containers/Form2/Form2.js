@@ -89,7 +89,7 @@ const Form2 = () => {
       />
       <DropdownWithSearch
         title="RANK"
-        options={["LCP", "LCVP", "TEAM LEADER", "EST"]}
+        options={["LCP", "LCVP", "TEAM LEADER", "EST", "TEAM MEMBER"]}
         selected={rank}
         setSelected={setRank}
       />

@@ -1,6 +1,7 @@
+import { CircularProgress } from "@mui/material";
 import classes from "./Button.module.css";
 
-const Button = ({ children, type, disabled, onClick }) => {
+const Button = ({ children, type, disabled, onClick, loading }) => {
   return (
     <button
       className={`${classes.button} ${
@@ -23,7 +24,7 @@ const Button = ({ children, type, disabled, onClick }) => {
       onClick={onClick}
       disabled={disabled}
     >
-      {children}
+      {loading ? <CircularProgress size="2rem" color="inherit" /> : children}
     </button>
   );
 };

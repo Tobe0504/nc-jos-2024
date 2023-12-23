@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
 import classes from "../Forms/Forms.module.css";
@@ -7,13 +7,14 @@ import AcceptedModal from "../../Components/AcceptedModal/AcceptedModal";
 import SuccessModalBody from "./SuccessModalBody";
 
 const Form4 = () => {
-  // Router
-
   // COntext
-  const { formData, setFormData } = useContext(AppContext);
-
-  // States
-  const [displayModal, setDisplayModal] = useState(false);
+  const {
+    formData,
+    setFormData,
+    register,
+    setFormSubmitRequest,
+    formSubmitRequest,
+  } = useContext(AppContext);
 
   // Utils
   const inputChangeHandler = (e) => {
@@ -24,10 +25,12 @@ const Form4 = () => {
 
   return (
     <form className={classes.container}>
-      {displayModal && (
+      {formSubmitRequest?.data && (
         <AcceptedModal
           onClick={() => {
-            setDisplayModal(false);
+            setFormSubmitRequest((prevState) => {
+              return { ...prevState, data: null };
+            });
           }}
           body={<SuccessModalBody />}
         />
@@ -48,9 +51,9 @@ const Form4 = () => {
       <Button
         onClick={(e) => {
           e.preventDefault();
-
-          setDisplayModal(true);
+          register();
         }}
+        loading={formSubmitRequest?.isLoading}
       >
         REGISTER
       </Button>

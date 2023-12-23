@@ -50,12 +50,12 @@ const Form1 = () => {
       />
       <DropdownWithSearch
         title="GENDER"
-        options={["LADY", "GENTLEMAN", "CAN I ABSTAIN"]}
+        options={["LADY", "GENTLEMAN"]}
         selected={gender}
         setSelected={setGender}
       />
       <Input
-        placeholder="RAVEN ADDRESS"
+        placeholder="RAVEN (EMAIL) ADDRESS"
         value={formData.address}
         name="address"
         onChange={inputChangeHandler}
