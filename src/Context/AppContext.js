@@ -27,6 +27,14 @@ const AppContextProvider = ({ children }) => {
     error: null,
   });
 
+  const [genderState, setGenderState] = useState("");
+  // States
+  const [lcState, setLcState] = useState("");
+  const [rankState, setRankState] = useState("");
+  const [firstSummitState, setFirstSummitState] = useState("");
+  const [allergiesState, setAllergiesState] = useState("");
+  const [oppositeSex, setOppositeSex] = useState("");
+
   const {
     name,
     gender,
@@ -93,6 +101,18 @@ const AppContextProvider = ({ children }) => {
         register,
         setFormSubmitRequest,
         formSubmitRequest,
+        genderState,
+        setGenderState,
+        lcState,
+        setLcState,
+        rankState,
+        setRankState,
+        firstSummitState,
+        setFirstSummitState,
+        allergiesState,
+        setAllergiesState,
+        oppositeSex,
+        setOppositeSex,
       }}
     >
       {children}

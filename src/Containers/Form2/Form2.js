@@ -3,7 +3,7 @@ import DropdownWithSearch from "../../Components/DropdownWithSearch/DropdownWith
 import Input from "../../Components/Input/Input";
 import classes from "../Forms/Forms.module.css";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useRef } from "react";
 import { AppContext } from "../../Context/AppContext";
 import { useEffect } from "react";
 
@@ -12,12 +12,16 @@ const Form2 = () => {
   const navigate = useNavigate();
 
   // COntext
-  const { formData, setFormData } = useContext(AppContext);
-
-  // States
-  const [lc, setLc] = useState("");
-  const [rank, setRank] = useState("");
-  const [firstSummit, setFirstSummit] = useState("");
+  const {
+    formData,
+    setFormData,
+    lcState,
+    setLcState,
+    rankState,
+    setRankState,
+    firstSummitState,
+    setFirstSummitState,
+  } = useContext(AppContext);
 
   // Utils
   const inputChangeHandler = (e) => {
@@ -28,34 +32,37 @@ const Form2 = () => {
 
   // Effects
   useEffect(() => {
-    if (lc) {
+    if (lcState) {
       setFormData((prevState) => {
-        return { ...prevState, lc: lc };
+        return { ...prevState, lc: lcState };
       });
     }
 
     // eslint-disable-next-line
-  }, [lc]);
+  }, [lcState]);
 
   useEffect(() => {
-    if (firstSummit) {
+    if (firstSummitState) {
       setFormData((prevState) => {
-        return { ...prevState, firstSummit: firstSummit };
+        return { ...prevState, firstSummit: firstSummitState };
       });
     }
 
     // eslint-disable-next-line
-  }, [firstSummit]);
+  }, [firstSummitState]);
 
   useEffect(() => {
-    if (lc) {
+    if (rankState) {
       setFormData((prevState) => {
-        return { ...prevState, rank: rank };
+        return { ...prevState, rank: rankState };
       });
     }
 
     // eslint-disable-next-line
-  }, [rank]);
+  }, [rankState]);
+
+  // Refs
+  const ref = useRef();
 
   return (
     <form className={classes.container}>
@@ -77,8 +84,8 @@ const Form2 = () => {
           "PORT HARCOURT",
           "THE COOKS",
         ]}
-        selected={lc}
-        setSelected={setLc}
+        selected={lcState}
+        setSelected={setLcState}
       />
       <Input
         placeholder="NAME (BIRTHDAY) DAY"
@@ -86,18 +93,24 @@ const Form2 = () => {
         value={formData.birthday}
         name="birthday"
         onChange={inputChangeHandler}
+        onFocus={() => {
+          if (ref.current) ref.current.type = "date";
+        }}
+        onBlur={() => {
+          if (ref.current) ref.current.type = "date";
+        }}
       />
       <DropdownWithSearch
         title="RANK"
         options={["LCP", "LCVP", "TEAM LEADER", "EST", "TEAM MEMBER"]}
-        selected={rank}
-        setSelected={setRank}
+        selected={rankState}
+        setSelected={setRankState}
       />
       <DropdownWithSearch
         title="IS THIS YOUR FIRST SUMMIT"
         options={["YES", "NO"]}
-        selected={firstSummit}
-        setSelected={setFirstSummit}
+        selected={firstSummitState}
+        setSelected={setFirstSummitState}
       />
 
       <Button

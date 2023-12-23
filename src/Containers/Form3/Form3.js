@@ -3,7 +3,7 @@ import Button from "../../Components/Button/Button";
 import DropdownWithSearch from "../../Components/DropdownWithSearch/DropdownWithSearch";
 import Input from "../../Components/Input/Input";
 import classes from "../Forms/Forms.module.css";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../../Context/AppContext";
 
 const Form3 = () => {
@@ -11,11 +11,14 @@ const Form3 = () => {
   const navigate = useNavigate();
 
   // COntext
-  const { formData, setFormData } = useContext(AppContext);
-
-  // States
-  const [allergies, setAllergies] = useState("");
-  const [oppositeSex, setOppositeSex] = useState("");
+  const {
+    formData,
+    setFormData,
+    allergiesState,
+    setAllergiesState,
+    oppositeSex,
+    setOppositeSex,
+  } = useContext(AppContext);
 
   // Utils
   const inputChangeHandler = (e) => {
@@ -26,14 +29,14 @@ const Form3 = () => {
 
   // Effects
   useEffect(() => {
-    if (allergies) {
+    if (allergiesState) {
       setFormData((prevState) => {
-        return { ...prevState, allergies: allergies };
+        return { ...prevState, allergies: allergiesState };
       });
     }
 
     // eslint-disable-next-line
-  }, [allergies]);
+  }, [allergiesState]);
 
   useEffect(() => {
     if (oppositeSex) {
@@ -50,8 +53,8 @@ const Form3 = () => {
       <DropdownWithSearch
         title="DO YOU HAVE ANY ALLERGIES"
         options={["YES", "NO"]}
-        selected={allergies}
-        setSelected={setAllergies}
+        selected={allergiesState}
+        setSelected={setAllergiesState}
       />
       <Input
         placeholder="WHAT'S THE TREATMENT FOR THE CONDITION"

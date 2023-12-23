@@ -30,6 +30,7 @@ const Input = ({
       )}
       <input
         type={type ? type : "text"}
+        onFocus={onFocus}
         name={name}
         placeholder={placeholder}
         id={label}

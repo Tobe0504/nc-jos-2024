@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import DropdownWithSearch from "../../Components/DropdownWithSearch/DropdownWithSearch";
@@ -11,10 +11,10 @@ const Form1 = () => {
   const navigate = useNavigate();
 
   // COntext
-  const { formData, setFormData } = useContext(AppContext);
+  const { formData, setFormData, genderState, setGenderState } =
+    useContext(AppContext);
 
   // States
-  const [gender, setGender] = useState("");
 
   // Utils
   const inputChangeHandler = (e) => {
@@ -25,14 +25,14 @@ const Form1 = () => {
 
   // Effects
   useEffect(() => {
-    if (gender) {
+    if (genderState) {
       setFormData((prevState) => {
-        return { ...prevState, gender: gender };
+        return { ...prevState, gender: genderState };
       });
     }
 
     // eslint-disable-next-line
-  }, [gender]);
+  }, [genderState]);
 
   return (
     <form className={classes.container}>
@@ -51,8 +51,8 @@ const Form1 = () => {
       <DropdownWithSearch
         title="GENDER"
         options={["LADY", "GENTLEMAN"]}
-        selected={gender}
-        setSelected={setGender}
+        selected={genderState}
+        setSelected={setGenderState}
       />
       <Input
         placeholder="RAVEN (EMAIL) ADDRESS"
