@@ -96,8 +96,8 @@
   .container > input {
     padding: 12px 0px;
     font-family: Cinzel;
-    font-size: 14px;
-    line-height: 23px;
+    font-size: 12px;
+    line-height: normal;
   }
 
   .container > label {
@@ -115,8 +115,8 @@
   .container > input,
   .container > input::placeholder {
     padding: 12px 0px;
-    font-size: 14px;
-    line-height: 23px;
+    font-size: 12px;
+    line-height: normal;
   }
 
   .container > label {

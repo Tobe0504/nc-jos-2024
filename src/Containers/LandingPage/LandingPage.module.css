@@ -14,10 +14,10 @@
 .container > h4 {
   color: #c0c0c0;
   text-align: center;
-  font-family: Trajan Pro;
-  font-size: 100px;
+  font-family: Cinzel;
+  font-size: 80px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 900;
   line-height: normal;
 }
 
@@ -46,7 +46,7 @@
   }
 
   .container > h4 {
-    font-size: 32px;
+    font-size: 40px;
     line-height: normal;
   }
 
@@ -72,7 +72,7 @@
   }
 
   .container > h4 {
-    font-size: 32px;
+    font-size: 40px;
     line-height: normal;
   }
 

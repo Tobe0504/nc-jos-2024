@@ -221,8 +221,8 @@
   }
 
   .dropdown .dropdownButton {
-    font-size: 14px;
-    line-height: 23px;
+    font-size: 12px;
+    line-height: normal;
   }
 
   .errorMessage {
@@ -233,7 +233,7 @@
   .label,
   .inputSection > input,
   .dropdown .dropdownContent .dropdownItem {
-    font-size: 14px;
-    line-height: 23px;
+    font-size: 12px;
+    line-height: normal;
   }
 }
