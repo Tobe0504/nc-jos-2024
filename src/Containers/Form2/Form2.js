@@ -3,7 +3,7 @@ import DropdownWithSearch from "../../Components/DropdownWithSearch/DropdownWith
 import Input from "../../Components/Input/Input";
 import classes from "../Forms/Forms.module.css";
 import { useNavigate } from "react-router-dom";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../Context/AppContext";
 import { useEffect } from "react";
 
@@ -61,9 +61,6 @@ const Form2 = () => {
     // eslint-disable-next-line
   }, [rankState]);
 
-  // Refs
-  const ref = useRef();
-
   return (
     <form className={classes.container}>
       <DropdownWithSearch
@@ -89,7 +86,6 @@ const Form2 = () => {
       />
       <Input
         placeholder="NAME (BIRTHDAY) DAY"
-        ref={ref}
         type="text"
         value={formData.birthday}
         name="birthday"

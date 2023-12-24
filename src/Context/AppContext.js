@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState } from "react";
+import { createContext, useRef, useState } from "react";
 
 export const AppContext = createContext();
 
@@ -52,6 +52,9 @@ const AppContextProvider = ({ children }) => {
     suggestions,
   } = formData;
 
+  // Refs
+  const audioRef = useRef();
+
   const register = () => {
     setFormSubmitRequest({
       isLoading: true,
@@ -93,6 +96,13 @@ const AppContextProvider = ({ children }) => {
       });
   };
 
+  // Utils
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -113,6 +123,8 @@ const AppContextProvider = ({ children }) => {
         setAllergiesState,
         oppositeSex,
         setOppositeSex,
+        audioRef,
+        playAudio,
       }}
     >
       {children}
