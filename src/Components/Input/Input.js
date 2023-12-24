@@ -15,6 +15,7 @@ const Input = ({
   style,
   name,
   onFocus,
+  ref,
 }) => {
   // States
   const [invalid, setInvalid] = useState(false);
@@ -30,6 +31,7 @@ const Input = ({
       )}
       <input
         type={type ? type : "text"}
+        ref={ref}
         onFocus={onFocus}
         name={name}
         placeholder={placeholder}
@@ -41,7 +43,7 @@ const Input = ({
           } else {
             setInvalid(false);
           }
-          if (onBlur) onBlur();
+          onBlur(e);
         }}
         value={value}
         className={invalid ? classes.invalid : classes.valid}

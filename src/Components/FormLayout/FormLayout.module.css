@@ -8,6 +8,12 @@
 .container > div {
   width: 50%;
   flex: 50%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.leftSection {
+  height: 100%;
 }
 
 .leftSection > img {
@@ -21,6 +27,7 @@
   padding: 60px;
   position: relative;
   height: 100%;
+  overflow-y: auto;
 }
 
 .rightSection > img:nth-child(1) {
@@ -49,7 +56,7 @@
 }
 
 .innerContainer {
-  height: 100%;
+  height: inherit;
   background: transparent;
   position: relative;
   padding: 42px;

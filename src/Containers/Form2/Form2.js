@@ -89,15 +89,17 @@ const Form2 = () => {
       />
       <Input
         placeholder="NAME (BIRTHDAY) DAY"
-        type="date"
+        ref={ref}
+        type="text"
         value={formData.birthday}
         name="birthday"
         onChange={inputChangeHandler}
-        onFocus={() => {
-          if (ref.current) ref.current.type = "date";
+        onFocus={(e) => {
+          e.target.type = "date";
         }}
-        onBlur={() => {
-          if (ref.current) ref.current.type = "date";
+        onBlur={(e) => {
+          if (e.target) e.target.type = "text";
+          // console.log(e);
         }}
       />
       <DropdownWithSearch
